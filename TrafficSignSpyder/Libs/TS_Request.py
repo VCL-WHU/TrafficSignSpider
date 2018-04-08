@@ -55,6 +55,10 @@ class ts_request():
                             self.url_list.append(find_item['src'])
                         except KeyError as e:
                             pass
+                        try:
+                            self.url_list.append(find_item['_src'])
+                        except KeyError as e:
+                            pass
                         
         elif isinstance(self.demand,dict):
             for demand_key in self.demand:
@@ -64,6 +68,10 @@ class ts_request():
                         for find_item in find_list:
                             try:
                                 self.url_list.append(find_item['src'])
+                            except KeyError as e:
+                                pass
+                            try:
+                                self.url_list.append(find_item['_src'])
                             except KeyError as e:
                                 pass
 
