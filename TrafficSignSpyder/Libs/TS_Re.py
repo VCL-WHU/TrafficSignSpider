@@ -31,5 +31,6 @@ class ts_re():
         return ret_demand
 
     def make_small_dict_demand(self):
-        ret_demand = {'img':[{'src':re.compile('.*?\.jpg')}]}
+        ret_demand = {'img':[{'src':re.compile('.*?\.jpg')},
+                              {'_src':re.compile('.*?\.jpg')}]}
         return ret_demand
