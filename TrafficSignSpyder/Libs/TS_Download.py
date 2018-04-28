@@ -8,9 +8,10 @@ class ts_downloader():
         self.cur_Path = os.path.abspath(make_folder_path)
         self.is_two = two_insideF
         self.make_folders()
+
     def make_folders(self,make_folder_name = "Image"):
 
-        target_path=self.cur_Path
+        target_path = self.cur_Path
         is_two = self.is_two
 
         #当前路径
@@ -41,6 +42,17 @@ class ts_downloader():
                               img_url_list = url_list,img_len = lim_size )
         return None
 
+    def rename(self,start_num = 1):
+        cur_path = os.path.abspath(self.cur_Path)
+        path = os.path.join(cur_path,"Image")
+        file_list = os.listdir(path)
+        for i in range(len(file_list)):
+            src_path = os.path.join(path,file_list[i])
+            if os.path.exists(src_path):
+                dst_path = os.path.join(path,str(start_num + i) + '.jpg')
+                os.rename(src_path,dst_path)
+
+
     def Download_comfirm_img(self,func,c_path):
         pass
 
@@ -50,7 +62,7 @@ class ts_downloader():
 
     def Download_img(self,use_folder_name,img_url_list,img_len):
 
-        print(len(img_url_list))
+        # print(len(img_url_list))
 
         if img_url_list is None or len(img_url_list) == 0:
             print("empty img url list")
