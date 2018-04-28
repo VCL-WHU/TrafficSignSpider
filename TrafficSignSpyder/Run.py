@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from Base_Spyder import base_spyder
+from URL_Lib import huitu_url
 
-url="http://soso.huitu.com/search?kw=%E4%BA%A4%E9%80%9A%E6%A0%87%E5%BF%97&page=1"
-a = base_spyder(url)
+url= huitu_url[0]
+a = base_spyder(the_url = url)
 a.run()
 
